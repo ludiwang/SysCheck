@@ -50,19 +50,20 @@ public class XMLData {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             //File xmlFile = new File("C:\\Users\\wangc\\Google Drive\\java\\psdTargets.xml");
-            File xmlFile = new File(this.appConfig.getProp().getProperty("targetsXMLFile"));
+            String confLoc = this.appConfig.getProp().getProperty("confDir");
+            File xmlFile = new File(confLoc + "/" + this.appConfig.getProp().getProperty("targetsXMLFile"));
             targetDoc = dBuilder.parse(xmlFile);
             targetDoc.getDocumentElement().normalize();
             populateLists(targetDoc, "target");
 
             //xmlFile = new File("C:\\Users\\wangc\\Google Drive\\java\\psdChecks.xml");
-            xmlFile = new File(this.appConfig.getProp().getProperty("checksXMLFile"));
+            xmlFile = new File(confLoc + "/" +this.appConfig.getProp().getProperty("checksXMLFile"));
             checkDoc = dBuilder.parse(xmlFile);
             checkDoc.getDocumentElement().normalize();
             populateLists(checkDoc, "check");
 
             //xmlFile = new File("C:\\Users\\wangc\\Google Drive\\java\\classes.xml");
-            xmlFile = new File(this.appConfig.getProp().getProperty("classesXMLFile"));
+            xmlFile = new File(confLoc + "/" +this.appConfig.getProp().getProperty("classesXMLFile"));
             classDoc = dBuilder.parse(xmlFile);
             classDoc.getDocumentElement().normalize();
             populateLists(classDoc, "class");
@@ -126,24 +127,24 @@ public class XMLData {
     public ArrayList<String> getClassList() {
         return this.classList;
     }
-    //return the runtarget for a certain target
-    public String getRunTarget(String inTargetName) {
-        NodeList nList = targetDoc.getElementsByTagName("target");
-        String outRunTargetName = "";
-        for (int i=0; i<targetList.size();i++) {
-            Node nNode = nList.item(i);
-            if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                Element el = (Element)nNode;
-                String targetName = el.getElementsByTagName("name").item(0).getTextContent();
-                String runTarget = el.getElementsByTagName("runTarget").item(0).getTextContent();
-                if (targetName.equalsIgnoreCase(inTargetName)) {
-                    outRunTargetName = runTarget;
-                }
-                
-            }
-        }
-        return outRunTargetName;
-    }
+//    //return the runtarget for a certain target
+//    public String getRunTarget(String inTargetName) {
+//        NodeList nList = targetDoc.getElementsByTagName("target");
+//        String outRunTargetName = "";
+//        for (int i=0; i<targetList.size();i++) {
+//            Node nNode = nList.item(i);
+//            if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+//                Element el = (Element)nNode;
+//                String targetName = el.getElementsByTagName("name").item(0).getTextContent();
+//                String runTarget = el.getElementsByTagName("runTarget").item(0).getTextContent();
+//                if (targetName.equalsIgnoreCase(inTargetName)) {
+//                    outRunTargetName = runTarget;
+//                }
+//                
+//            }
+//        }
+//        return outRunTargetName;
+//    }
     
     private boolean validateXMLFile(String xsdPath, String xmlPath) {
        try {

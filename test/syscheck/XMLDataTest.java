@@ -83,16 +83,16 @@ public class XMLDataTest {
     /**
      * Test of getRunTarget method, of class XMLData.
      */
-    @Test
-    public void testGetRunTarget() {
-        System.out.println("getRunTarget");
-        String inTargetName = "";
-        XMLData instance = null;
-        String expResult = "";
-        String result = instance.getRunTarget(inTargetName);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testGetRunTarget() {
+//        System.out.println("getRunTarget");
+//        String inTargetName = "";
+//        XMLData instance = null;
+//        String expResult = "";
+//        String result = instance.getRunTarget(inTargetName);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
     
 }

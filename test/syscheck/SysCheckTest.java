@@ -43,23 +43,23 @@ public class SysCheckTest {
     @Test
     public void testMain() throws Exception {
         System.out.println("main");
-        String[] args = null;
+        String[] args = {"/home/oracle/Downloads/temp/syscheck.conf"};
         SysCheck.main(args);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
      * Test of getHostName method, of class SysCheck.
      */
-    @Test
-    public void testGetHostName() {
-        System.out.println("getHostName");
-        String expResult = "";
-        String result = SysCheck.getHostName();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
+//    @Test
+//    public void testGetHostName() {
+//        System.out.println("getHostName");
+//        String expResult = "";
+//        String result = SysCheck.getHostName();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//    
 }

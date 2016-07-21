@@ -46,22 +46,22 @@ public class XSDValidatorTest {
         String[] args = {"/home/oracle/Downloads/temp/classes.xsd","/home/oracle/Downloads/temp/classes.xml"};        
         XSDValidator.main(args);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+         
     }
 
     /**
      * Test of validateXMLSchema method, of class XSDValidator.
      */
-    @Test
-    public void testValidateXMLSchema() {
-        System.out.println("validateXMLSchema");
-        String xsdPath = "";
-        String xmlPath = "";
-        boolean expResult = false;
-        boolean result = XSDValidator.validateXMLSchema(xsdPath, xmlPath);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testValidateXMLSchema() {
+//        System.out.println("validateXMLSchema");
+//        String xsdPath = "";
+//        String xmlPath = "";
+//        boolean expResult = false;
+//        boolean result = XSDValidator.validateXMLSchema(xsdPath, xmlPath);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
     
 }

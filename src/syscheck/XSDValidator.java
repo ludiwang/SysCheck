@@ -8,6 +8,8 @@ package syscheck;
 /**
  *
  * @author oracle
+ * This class is used to validate xml against xsd
+ * This class is currently not used
  */
 import java.io.File;
 import java.io.IOException;

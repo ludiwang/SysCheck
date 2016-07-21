@@ -44,17 +44,18 @@ public class SysCheck {
         ArrayList<String> currentTargetList = new ArrayList<>();
         for (int i = 0; i < allTargetList.size(); i++) {
             String targetName = allTargetList.get(i);
-            String runTarget = nXMLData.getRunTarget(targetName);
-            System.out.println(runTarget);
-            if (runTarget.equalsIgnoreCase(getHostName())) {
-                currentTargetList.add(targetName);
-            }
+            System.out.println(targetName);
+            //String runTarget = nXMLData.getRunTarget(targetName);
+            //System.out.println(runTarget);
+//            if (runTarget.equalsIgnoreCase(getHostName())) {
+//                currentTargetList.add(targetName);
+//            }
         }
 
-        System.out.println("Targets that need to be checked from this host are:");
-        for (int i = 0; i < currentTargetList.size(); i++) {
-            System.out.println(currentTargetList.get(i));
-        }
+//        System.out.println("Targets that need to be checked from this host are:");
+//        for (int i = 0; i < currentTargetList.size(); i++) {
+//            System.out.println(currentTargetList.get(i));
+//        }
         
         new OsFileDir("/tmp/test1");
         //System.out.println(runTarget);
