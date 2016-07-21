@@ -19,6 +19,9 @@ import org.w3c.dom.Element;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.transform.Source;
 import org.w3c.dom.Attr;
 import org.xml.sax.SAXException;
  
@@ -32,7 +35,7 @@ public class XMLData {
     private Document targetDoc;
     private Document checkDoc;
     private Document classDoc;
-    private ArrayList<String> targetList = new ArrayList<String>();
+    private ArrayList<String> targetList = new ArrayList<>();
     private ArrayList<String> classList = new ArrayList<String>();
     private ArrayList<String> checkList = new ArrayList<String>();
     private AppConfig appConfig;
@@ -86,8 +89,9 @@ public class XMLData {
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
                     String targetName = eElement.getElementsByTagName("name").item(0).getTextContent();
+                    String targetType = eElement.getElementsByTagName("targetType").item(0).getTextContent();
                     //System.out.println(targetName);
-                    targetList.add(targetName);
+                    targetList.add(targetName + " " +targetType);
                     
                 }
             }
@@ -146,17 +150,25 @@ public class XMLData {
 //        return outRunTargetName;
 //    }
     
-    private boolean validateXMLFile(String xsdPath, String xmlPath) {
+    public static boolean validateXMLFile(String xsdPath, String xmlPath) {
        try {
            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
            Schema schema = factory.newSchema(new File(xsdPath));
            Validator validator = schema.newValidator();
+           Source xmlFile = new StreamSource(new File(xmlPath));
+           try {
+               validator.validate(xmlFile);
+           } catch (IOException ex) {
+               System.out.println(ex.getMessage());
+               return false;
+           }
+           return true;
            
        } catch (SAXException e) {
            System.out.println("SAXException: " + e.getMessage());
            return false;
        }
-       return false;
+        
     }
 
 }

@@ -38,46 +38,62 @@ public class XMLDataTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of getTargetList method, of class XMLData.
-     */
-    @Test
-    public void testGetTargetList() {
-        System.out.println("getTargetList");
-        XMLData instance = null;
-        ArrayList<String> expResult = null;
-        ArrayList<String> result = instance.getTargetList();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    /**
+//     * Test of getTargetList method, of class XMLData.
+//     */
+//    @Test
+//    public void testGetTargetList() {
+//        System.out.println("getTargetList");
+//        XMLData instance = null;
+//        ArrayList<String> expResult = null;
+//        ArrayList<String> result = instance.getTargetList();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of getCheckList method, of class XMLData.
+//     */
+//    @Test
+//    public void testGetCheckList() {
+//        System.out.println("getCheckList");
+//        XMLData instance = null;
+//        ArrayList<String> expResult = null;
+//        ArrayList<String> result = instance.getCheckList();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of getClassList method, of class XMLData.
+//     */
+//    @Test
+//    public void testGetClassList() {
+//        System.out.println("getClassList");
+//        XMLData instance = null;
+//        ArrayList<String> expResult = null;
+//        ArrayList<String> result = instance.getClassList();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
-     * Test of getCheckList method, of class XMLData.
+     * Test of validateXMLFile method, of class XMLData.
      */
     @Test
-    public void testGetCheckList() {
-        System.out.println("getCheckList");
-        XMLData instance = null;
-        ArrayList<String> expResult = null;
-        ArrayList<String> result = instance.getCheckList();
+    public void testValidateXMLFile() {
+        System.out.println("validateXMLFile");
+        String xsdPath = "/home/oracle/Downloads/temp/classes.xsd";
+        String xmlPath = "/home/oracle/Downloads/temp/classes.xml";
+        //XMLData instance = null;
+        boolean expResult = true;
+        boolean result = XMLData.validateXMLFile(xsdPath, xmlPath);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getClassList method, of class XMLData.
-     */
-    @Test
-    public void testGetClassList() {
-        System.out.println("getClassList");
-        XMLData instance = null;
-        ArrayList<String> expResult = null;
-        ArrayList<String> result = instance.getClassList();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
