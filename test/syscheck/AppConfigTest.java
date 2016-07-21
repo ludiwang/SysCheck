@@ -41,10 +41,25 @@ public class AppConfigTest {
     @Test
     public void testSomeMethod() {
         // TODO review the generated test code and remove the default call to fail.
-        AppConfig config1 = new AppConfig("C:\\Users\\wangc\\Documents\\test1.txt");
+        //AppConfig config1 = new AppConfig("C:\\Users\\wangc\\Documents\\test1.txt");
+        AppConfig config1 = new AppConfig("/home/oracle/Downloads/temp/syscheck.conf");
         Properties prop1 = config1.getProp();
-        System.out.println("test " + prop1.getProperty("name"));
+        System.out.println("test: " + prop1.getProperty("targetsXMLFile"));
         //fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getProp method, of class AppConfig.
+     */
+    @Test
+    public void testGetProp() {
+        System.out.println("getProp");
+        AppConfig instance = null;
+        Properties expResult = null;
+        Properties result = instance.getProp();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }
